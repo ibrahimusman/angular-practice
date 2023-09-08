@@ -1,0 +1,35 @@
+body {
+  text-align: center;
+}
+.text-color1 {
+  color: red;
+}
+.text-color2 {
+  color: blue;
+}
+.text-color3 {
+  color: green;
+}
+.text-color4 {
+  color: yellow;
+}
+.text-color5 {
+  color: orange;
+}
+.text-color6 {
+  color: purple;
+  font-style: italic;
+}
+.text-color7 {
+  color: pink;
+  font-style: italic;
+}
+.text-color8 {
+  color: brown;
+}
+.text-color9 {
+  color: sienna;
+}
+.text-color10 input {
+  color: grey;
+}

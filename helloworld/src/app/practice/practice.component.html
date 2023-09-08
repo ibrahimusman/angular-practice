@@ -1,0 +1,32 @@
+<body>
+  <h1 class="text-color1">code by {{ name }}</h1>
+  <h2 class="text-color2">Hello World</h2>
+  <p class="text-color3">practice</p>
+  <h3 class="text-color4">{{ "my name is " + name }}</h3>
+  <h3 class="text-color5">{{ "my name is " + name.toUpperCase() }}</h3>
+  <h3 [class]="successclass">
+    {{ "the length of my name : " + name + " = " + name.length }}
+  </h3>
+  <h1 [class.text-color7]="hasError">{{ sayhytouser() }}</h1>
+  <h1 class="text-color8">{{ site() }}</h1>
+  <input
+    type="text"
+    placeholder="{{ name }}"
+    bind-id="myid"
+    class="text-color9"
+  />
+  <!-- numer bolwaya or disabled karwaya ts file say -->
+  <input
+    type="number"
+    placeholder="{{ number }}"
+    bind-disabled="isdisabled"
+    class="text-color10"
+  />
+  <h6 [ngClass]="messageClasses">pata nahi samjh nahi aaarha</h6>
+  <h5 [style.color]="hasError ? 'silver' : 'pink'">samjh agaya ap</h5>
+  <h1 [style.color]="purplecolor">this is blue color</h1>
+  <h3 [ngStyle]="lotsOfStyles">this is blue color</h3>
+  <button (click)="onClick()">welcome</button>
+  <input #myInput type="text" />
+  <button (click)="logMessage(myInput.value)">log</button>
+</body>
