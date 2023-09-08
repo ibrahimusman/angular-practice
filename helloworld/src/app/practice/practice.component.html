@@ -29,4 +29,6 @@
   <button (click)="onClick()">welcome</button>
   <input #myInput type="text" />
   <button (click)="logMessage(myInput.value)">log</button>
+  <input [(ngModel)]="inputvalue" type="text" />
+  <h1>You enterd = {{ inputvalue }}</h1>
 </body>

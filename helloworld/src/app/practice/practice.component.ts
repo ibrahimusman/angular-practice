@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./practice.component.css'],
 })
 export class PracticeComponent {
+  public inputvalue = '';
   public name: string = 'Ibrahim Usman';
   public siteurl = window.location.href;
   public myid = 'testid';
@@ -35,7 +36,7 @@ export class PracticeComponent {
     window.location.href = 'https://www.google.com';
   }
   logMessage(value: string | number) {
-    // alert('value is ' + value);
-    console.log(value);
+    alert('value is ' + value);
+    // console.log(value);
   }
 }
