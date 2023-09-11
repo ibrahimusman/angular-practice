@@ -1,0 +1,9 @@
+<h2>Employee List</h2>
+<ul *ngFor="let employee of employees">
+  <li>Employee name = {{ employee.name }}</li>
+  <li>Employee age = {{ employee.age }}</li>
+  <li>Employee salary = {{ employee.salary }}</li>
+</ul>
+<h2>Contacts</h2>
+<pre>{{ employees[3].contact[1].amount | number }}</pre>
+<pre>{{ employees[3].contact[1].amount | number }}</pre>

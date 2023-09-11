@@ -129,7 +129,11 @@
   <!-- services mn component to component call hota hay -->
   <!-- for generating a services type ng g s name -->
   <h2>Employee List</h2>
-  <!-- <ul *ngFor="let employee of employees">
-    <li>{{ employee.id }} . {{ employee.name }} - {{ employee.age }}</li>
-  </ul> -->
+  <ul *ngFor="let car of cars">
+    <div>cars Number Plate = {{ car.noplate }}</div>
+    <div>cars Model = {{ car.model }}</div>
+    <div>cars Color = {{ car.color }}</div>
+    <div>cars Price = {{ car.price | currency : "GBP" }}</div>
+    <img src="{{ car.img }}" style="height: 200px; width: 400px" />
+  </ul>
 </body>

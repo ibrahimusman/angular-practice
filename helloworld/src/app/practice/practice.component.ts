@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { CarsService } from '../cars.service';
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
@@ -52,5 +52,10 @@ export class PracticeComponent {
   @Output() public childEvent = new EventEmitter();
   fireEvent() {
     this.childEvent.emit('Hey Ibrahim Usman');
+  }
+  public cars = [] as any;
+  constructor(private _CarsService: CarsService) {}
+  ngOnInit() {
+    this.cars = this._CarsService.getcarsdetails();
   }
 }
