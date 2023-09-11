@@ -31,4 +31,105 @@
   <button (click)="logMessage(myInput.value)">log</button>
   <input [(ngModel)]="inputvalue" type="text" />
   <h1>You enterd = {{ inputvalue }}</h1>
+  <!-- html tag ko remove karnay kay lye just like dislay none in css -->
+  <h1 *ngIf="false">hy hello</h1>
+  <!-- same yahi hm propertise laga kay bhi kar saktay han -->
+  <h1 *ngIf="isdisabled">kasay ho</h1>
+  <!-- agar if else ki condition lagani hay to asay istemal karengay -->
+  <!-- agar isdisabled true howa to then wala chalayga or agar agar faslse howa to else wala chalayga -->
+  <div *ngIf="isdisabled; then thenblock; else elseblock"></div>
+  <ng-template #elseblock>
+    <h1>else block</h1>
+  </ng-template>
+  <ng-template #thenblock>
+    <h1>then block</h1>
+  </ng-template>
+  <!-- ng switch case mn jo varible milta hay woh dikha ta hay ng switch case say lay kar -->
+  <div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'">you picked red color</h1>
+    <h1 *ngSwitchCase="'blue'">you picked blue color</h1>
+    <h1 *ngSwitchCase="'green'">you picked green color</h1>
+    <!-- switchdefault mn hamay agr koi value na milay to woh dekhata hay -->
+    <h1 *ngSwitchDefault>pick again</h1>
+  </div>
+  <!-- ngfor loop hota hay jo html mn istemal hota hay color aik hay or colors array hay ismay index bhar rahay han or jo colors die han woh atay jaengay -->
+  <div *ngFor="let color of colors; index as i">
+    <h1>{{ i + 1 }} {{ color }}</h1>
+  </div>
+  <!-- first wala true hoga baki sb false -->
+  <div *ngFor="let color of colors; first as f">
+    <h1>{{ f }} {{ color }}</h1>
+  </div>
+  <!-- last wala true hoga baki sab flase -->
+  <div *ngFor="let color of colors; last as l">
+    <h1>{{ l }} {{ color }}</h1>
+  </div>
+  <!-- 1 and 3 true hoga baki sab false -->
+  <div *ngFor="let color of colors; odd as o">
+    <h1>{{ o }} {{ color }}</h1>
+  </div>
+  <!-- 0 2 4 true hoga baki sab false -->
+  <div *ngFor="let color of colors; even as e">
+    <h1>{{ e }} {{ color }}</h1>
+  </div>
+  <!-- yah parent say aaraha hay -->
+  <h2>{{ "hello " + names }}</h2>
+  <!-- yah parent ko day raha hay. hay yah child -->
+  <button (click)="fireEvent()">Send Event</button>
+  <!-- uppercase karnay kay lye -->
+  <h3>{{ name | uppercase }}</h3>
+  <!-- lowercase karnay kay lye -->
+  <h3>{{ name | lowercase }}</h3>
+  <!-- titlecase karnay kay lye -->
+  <h3>{{ name | titlecase }}</h3>
+  <!-- slice karnay kay lye i 0 b 1 r 2 a 3 h 4 i 5 m 6 ismay 3 say shuro hoga 5 say pahlay khatm hoga -->
+  <h3>{{ name | slice : 3 : 5 }}</h3>
+  <!-- slice karnay kay lye json formate kay lye -->
+  <h3>{{ person | json }}</h3>
+  <!-- number karnay kay lye -->
+  <h3>{{ 5.678 | number : "1.2-3" }}</h3>
+  <!-- number karnay kay lye -->
+  <h3>{{ 5.678 | number : "3.4-5" }}</h3>
+  <!-- number karnay kay lye -->
+  <h3>{{ 5.678 | number : "3.1-2" }}</h3>
+  <!-- percent karnay kay lye -->
+  <h3>{{ 0.25 | percent }}</h3>
+  <!-- currency karnay kay lye BY DEFAULT $ AYEGA -->
+  <h3>{{ 0.25 | currency }}</h3>
+  <!-- currency kay sath curency ka unit dalnay kay lye-->
+  <h3>{{ 0.25 | currency : "GBP" }}</h3>
+  <!-- country code for pakistan -->
+  <h3>{{ 0.25 | currency : "PKR" }}</h3>
+  <!-- currency karnay kay lye code pahlay ajyega likn latters mn-->
+  <h3>{{ 0.25 | currency : "GBP" : "code" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "short" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "shortDate" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "shortTime" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "medium" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "mediumDate" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "mediumTime" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "long" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "longDate" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "longTime" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "full" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "fullDate" }}</h3>
+  <!-- date karnay kay lye -->
+  <h3>{{ date | date : "fullTime" }}</h3>
+  <!-- services mn component to component call hota hay -->
+  <!-- for generating a services type ng g s name -->
+  <h2>Employee List</h2>
+  <!-- <ul *ngFor="let employee of employees">
+    <li>{{ employee.id }} . {{ employee.name }} - {{ employee.age }}</li>
+  </ul> -->
 </body>

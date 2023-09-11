@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-practice',
@@ -25,6 +25,13 @@ export class PracticeComponent {
     color: 'purple',
     fontStyle: 'italic',
   };
+  public color = 'red';
+  public colors = ['red', 'blue', 'green', 'yellow'];
+  date = new Date();
+  public person = {
+    firstName: 'Ibrahim',
+    lastName: 'Usman',
+  };
   sayhytouser() {
     return 'Hy ' + this.name;
   }
@@ -38,5 +45,12 @@ export class PracticeComponent {
   logMessage(value: string | number) {
     alert('value is ' + value);
     // console.log(value);
+  }
+  // input: parent ki value child ko pass karna
+  @Input('ParentData') public names: string = '';
+  // output: child ki value parent ko pass karna ismay EventEmitter use hota hai
+  @Output() public childEvent = new EventEmitter();
+  fireEvent() {
+    this.childEvent.emit('Hey Ibrahim Usman');
   }
 }

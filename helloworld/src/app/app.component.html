@@ -1,1 +1,8 @@
-<app-practice></app-practice>
+<h1>Parent Component</h1>
+<h2>{{ message }}</h2>
+<app-practice
+  [ParentData]="names"
+  (childEvent)="message = $event"
+></app-practice>
+<!-- parentData parent ki value dikha raha hay -->
+<!-- childEvent child ki value dikha raha hay -->

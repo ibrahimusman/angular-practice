@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Ibrahim Usman';
+  // parent to child
+  public names = 'Ibrahim Usman';
+  // child to parent
+  public message = '';
 }
