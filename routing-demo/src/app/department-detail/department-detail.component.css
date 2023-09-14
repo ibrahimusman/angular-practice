@@ -1,0 +1,35 @@
+a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+a:hover{
+    background-color: #3e8e41;
+}
+.back button{
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+.back button:hover{
+    background-color: #3e8e41;
+}
+p>button{
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+p>button:hover{
+    background-color: #3e8e41;
+}

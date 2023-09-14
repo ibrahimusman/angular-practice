@@ -1,0 +1,11 @@
+<form #usersForm="ngForm"(ngSubmit)="getUserFormData(usersForm.value)">
+    <input type="text" ngModel name="name" placeholder="Enter Name">
+    <br><br>
+    <input type="text" ngModel name="email" placeholder="Enter Email">
+    <br><br>
+    <input type="password" ngModel name="password" placeholder="Enter Password">
+    <br><br>
+    <button>Add New User</button>
+    <hr>
+    <pre *ngFor="let i of showUser">{{usersForm.value | json}}</pre>
+</form>

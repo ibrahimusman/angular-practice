@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>UserId</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Button</th>
+  </tr>
+  <tr *ngFor="let post of posts">
+    <td>{{ post.userId }}</td>
+    <td>{{ post.title }}</td>
+    <td>{{ post.body }}</td>
+    <td><button (click)="storeRow(post.id)">take row</button></td>
+  </tr>
+</table>
+<hr />
+<table *ngIf="storedRows.length > 0">
+  <tr>
+    <th>UserId</th>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <tr *ngFor="let storedRow of storedRows">
+    <td>{{ storedRow.userId }}</td>
+    <td>{{ storedRow.title }}</td>
+    <td>{{ storedRow.body }}</td>
+  </tr>
+</table>
