@@ -8,8 +8,13 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   public employees = [] as any;
-  constructor(private employeeService: EmployeeService) {}
+  public errorMsg: any;
+  constructor(private _employeeService: EmployeeService) {}
   ngOnInit() {
-    this.employees = this.employeeService.getEmployees();
+    // getEmployees function ko call krna hay jo employee.service.ts mn hay
+    this._employeeService.getEmployees()
+    // subscribe krna hay observable ko jo observable hay wo employee.service.ts mn hay 
+    .subscribe((data: any) => { this.employees = data;console.log(this.employees) },
+                    (error:any) => this.errorMsg = error);
   }
 }

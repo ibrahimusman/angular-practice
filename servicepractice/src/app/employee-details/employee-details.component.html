@@ -1,5 +1,11 @@
 <ul *ngFor="let employee of employees">
   <li>Employee name = {{ employee.name }}</li>
-  <li>Employee age = {{ employee.age }}</li>
+  <li>Employee age = {{ employee?.title }}</li>
   <li>Employee id = {{ employee.id }}</li>
+  <div>{{employee}}</div>
+
 </ul>
+<h2>{{errorMsg}}</h2>
+
+
+
