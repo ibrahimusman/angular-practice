@@ -5,7 +5,7 @@
     <th>Body</th>
     <th>Button</th>
   </tr>
-  <tr *ngFor="let post of posts">
+  <tr *ngFor="let post of posts ; let i = index;">
     <td>{{ post.userId }}</td>
     <td>{{ post.title }}</td>
     <td>{{ post.body }}</td>
@@ -19,9 +19,25 @@
     <th>Title</th>
     <th>Body</th>
   </tr>
-  <tr *ngFor="let storedRow of storedRows">
+  <tr *ngFor="let storedRow of storedRows ; let i = index;">
     <td>{{ storedRow.userId }}</td>
     <td>{{ storedRow.title }}</td>
     <td>{{ storedRow.body }}</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th>PostId</th>
+    <th>UserId</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Body</th>
+  </tr>
+  <tr *ngFor="let comment of Comments ; let i = index;">
+    <td>{{ comment.postId }}</td>
+    <td>{{ comment.id }}</td>
+    <td>{{ comment.name }}</td>
+    <td>{{ comment.email }}</td>
+    <td>{{ comment.body }}</td>
   </tr>
 </table>

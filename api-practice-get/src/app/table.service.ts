@@ -9,13 +9,16 @@ import { Observable } from 'rxjs';
 export class TableService {
   private url = "https://jsonplaceholder.typicode.com/posts";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+  getPosts(): Observable<any> {
+    return this.http.get<any>(this.url);
   }
 
   storeRow(postId: number): Observable<any> {
     return this.http.get<any>(`${this.url}/${postId}`, {});
+  }
+  getComments(postId: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/${postId}/comments`)
   }
 }

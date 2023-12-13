@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Phone</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Topic</th>
+            <th>Time Preference</th>
+            <th>Subscribe</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of enrollments">
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.street }}</td>
+            <td>{{ item.city }}</td>
+            <td>{{ item.state }}</td>
+            <td>{{ item.zip }}</td>
+            <td>{{ item.topic }}</td>
+            <td>{{ item.timePreference }}</td>
+            <td>{{ item.subscribe }}</td>
+        </tr>
+    </tbody>
+</table>

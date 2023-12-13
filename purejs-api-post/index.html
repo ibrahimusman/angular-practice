@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Submit</button>
+        <pre>
+        </pre>
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const name = document.querySelector('input[name="name"]');
+        const email = document.querySelector('input[name="email"]');
+        const password = document.querySelector('input[name="password"]');
+        const user = document.querySelector('pre');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = {
+                name: name.value,
+                email: email.value,
+                password: password.value
+            };
+            fetch('https://jsonplaceholder.typicode.com/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                document.querySelector('form').reset();
+        
+                user.innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
